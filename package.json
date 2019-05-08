@@ -1,0 +1,25 @@
+{
+  "name": "retail-receipts-v1",
+  "version": "0.0.1",
+  "description": "Generate ZPL print lines",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "node src/test.js",
+    "local": "node scripts/local-express.js",
+    "nm:local": "nodemon scripts/local-express.js",
+    "nm:test": "nodemon src/test.js"
+  },
+  "_moduleAliases": {
+    "@src": "./src",
+    "@root": "."
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "aws-serverless-express": "^3.3.6",
+    "aws-xray-sdk": "^2.3.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "js-yaml": "^3.13.1",
+    "module-alias": "^2.2.0"
+  }
+}

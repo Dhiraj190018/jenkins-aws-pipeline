@@ -1,0 +1,6 @@
+node_modules
+/package-lock.json
+.vs/ProjectSettings.json
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
+.vs/retail-receipts-v1/v15/.suo

@@ -1,0 +1,32 @@
+qualityConfig:  # Per https://bitbucket.nike.com/projects/ACID/repos/qma-cli/browse/docs/qualityConfig/qualityConfig.md
+  phases:
+    pra:
+    - mocha:
+        metricSource: mocha
+        metricFile: reports/unit/mochawesome.json
+        reportFiles:
+        - reports/unit/**/*
+        reportIndex: reports/unit/mochawesome.html
+    - coverage:
+        metricSource: istanbul
+        metricFile: reports/unit/coverage/coverage-summary.json
+        reportFiles:
+        - reports/unit/coverage/self-updating-coverage.*
+        - reports/unit/coverage/lcov.info
+        - reports/unit/coverage/lcov-report/**
+        reportIndex: reports/unit/coverage/lcov-report/index.html
+    - lint:
+        metricSource: eslint
+        metricFile: reports/eslint.json
+        reportFiles:
+        - reports/eslint.html
+        reportIndex: reports/eslint.html
+  application:
+    domain: ais
+    classification: platinum
+    owner: Lst-DTCSolutions.AssistInStoreSvc@nike.com
+    team: rstast
+    name: retail-receipts-v1
+    email: Lst-DTCSolutions.AssistInStoreSvc@nike.com
+    costcenter: 101494
+    organization: global retail store solutions

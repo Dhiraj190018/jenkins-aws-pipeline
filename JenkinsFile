@@ -3,30 +3,17 @@ def config = [
     isPR: env.BRANCH_NAME != "master",
     deploy: [
         baseStackNamePrefix: "waffle-stacksets",
-        role: 'NIKE.cicd.tool',
-        s3Path: "enterprise-roles/build_${env.BRANCH_NAME}_${env.BUILD_NUMBER}",
-        region: 'us-west-2',
-        pr: [
-            stackNamePrefix: "waffle-stacksets-${env.BRANCH_NAME}",
-            accountId: '393734726792', //ndam-dev
-        ],
+        //role: 'NIKE.cicd.tool',
+        //s3Path: "enterprise-roles/build_${env.BRANCH_NAME}_${env.BUILD_NUMBER}",
+        region: 'us-west-2',        
         test: [
-            accountId: '393734726792', //ndam-dev
-            stackNamePrefix: "waffle",
-        ],
-        prod: [
-            accountId: '496332631322', // waffle-automation
-            stackNamePrefix: "waffle",
+            accountId: '826581020013'
         ]
     ]
 ]
 
 if (!config.isPR) {
-    def projectProperties = [
-            [$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '5']],
-    ]
-    projectProperties.add(pipelineTriggers([cron('H H * * *')]))
-    properties(projectProperties)
+   
 }
 
 def stackSets

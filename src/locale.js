@@ -1,6 +1,6 @@
 var locale = module.exports = {
     english: {
-        nike: "NIKE",
+        nike: "NIKE", 
         telephone: "Telephone",
         size: "Size",
         subtotal: "Subtotal",

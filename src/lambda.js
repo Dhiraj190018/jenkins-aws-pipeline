@@ -1,5 +1,5 @@
 "use strict";
-
+ 
 require('module-alias/register')  
 const awspress = require("aws-serverless-express");
 const app = require("@src/server");
